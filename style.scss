@@ -1,0 +1,48 @@
+body {
+    background: #000;
+}
+
+.spinner {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bubbleUp {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: bubbleUp .6s alternate infinite ease;
+    &:nth-child(2) {
+        left: 0;
+        animation-delay: .2s;
+    }
+    &:nth-child(2) {
+        left: calc(100% - 55px);
+        animation-delay: .2s;
+    }
+    &:nth-child(3) {
+        right: 0;
+        animation-delay: .3s;
+    }
+}
+
+@keyframes bubbleUp {
+    from {
+        top: 30px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.3);
+    }
+    40% {
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    to {
+        top: 0%;
+    }
+}
